@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/zipcodes.css') }}">
+
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+</head>
+
+<body>
+    <div id="map-canvas"></div>
+	<form action="." method="POST">
+        <input type="text" name="addressa" style="position:absolute; left:100px;top:100px;width:300px;height:25px">
+        <input type="text" name="addressb" style="position:absolute; left:100px;top:135px;width:300px;height:25px">
+        <input type="submit" name="my-form" value="Send" style="position:absolute; left:100px;top:170px;">
+    </form>
+    <script>
+        var zips = {{ zips|safe }};
+        var center = {{center|safe}};
+        var userloc = {{userloc|safe}};
+        var zoom = {{zoom|safe}};
+    </script>
+    <script src="{{ url_for('static', filename='js/jquery-2.1.3.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/zipcodes.js') }}"></script>
+</body>
+
+</html>

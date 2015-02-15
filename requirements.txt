@@ -1,0 +1,9 @@
+Fiona
+Flask
+Shapely
+# 0.10 causes an isse with auto-reload
+Werkzeug==0.9.6
+gunicorn
+redis
+ipdb
+ipython
